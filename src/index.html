@@ -1,15 +1,91 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
-    <link rel="stylesheet" href="./sass/index.scss" />
-    <script type="module" src="./index.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Weather-App</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Example title</h1>
-    <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/example.html"></include>
+    <section class="search-location container">
+      <form class="search-location__form js-form">
+        <input name="query" placeholder="Enter the city" />
+        <button
+          type="button"
+          class="search-location__form-btn append"
+          id="js-btnAdd"
+        ></button>
+      </form>
+      <div class="search-location__slider">
+        <button
+          class="search-location__slider-btnPrev js-btnPrev prev"
+        ></button>
+        <ul class="search-location__slider-list js-slider-list siema"></ul>
+        <button
+          class="search-location__slider-btnNext js-btnNext next"
+        ></button>
+      </div>
+    </section>
+    <section class="toggle container">
+      <div class="toolbar">
+        <div class="theme-switch">
+          <span class="celsius isActiveColor">&degC</span>
+          <div class="switch">
+            <input
+              class="switch__input js-switch-input"
+              type="checkbox"
+              name="theme"
+              id="theme-switch-control"
+            />
+            <label
+              aria-hidden="true"
+              class="switch__label js-toggle"
+              for="theme-switch-control"
+              >On</label
+            >
+            <div aria-hidden="true" class="switch__marker"></div>
+          </div>
+          <span class="fahrenheit">&degF</span>
+        </div>
+      </div>
+    </section>
+    <section class="current-weather container"></section>
+    <div class="button-wrapper">
+      <button class="button-today">Today</button>
+      <button class="button-forecast">5 Days</button>
+    </div>
+    <section class="forecast-wrap container">
+      <div class="forecast hidden">
+        <h2 class="forecast__city-name"></h2>
+        <ul class="forecast__days"></ul>
+        <div class="forecast-info">
+          <ul class="forecast-info__list"></ul>
+          <button class="forecast-info__btn hidden"></button>
+        </div>
+        <div class="forecast-info">
+          <ul class="forecast-info__list hidden"></ul>
+          <button class="forecast-info__btn hidden"></button>
+        </div>
+      </div>
+    </section>
+    <section class="daily container">
+      <div class="date-info"></div>
+      <div class="showchartBtnJs"></div>
+      <div class="fivedays-chart">See chart</div>
+      <div class="quote">
+        <p class="quote__text">
+          Who cares about the clouds when we're together? Just sing a song and
+          bring the sunny weather.
+        </p>
+        <p class="quote__author">Dale Evans</p>
+      </div>
+    </section>
+    <!-- Js Script -->
+    <script src="index.js"></script>
   </body>
 </html>
